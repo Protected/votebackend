@@ -1,0 +1,980 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Vote for VRChat Worlds</title>
+<style type="text/css">
+
+/* Whitney font available here: https://allyourfonts.com/font/whitney-font/ */
+
+.theme-light {
+    --header-primary: #060607;
+    --header-secondary: #4f5660;
+    --text-normal: #2e3338;
+    --text-muted: #747f8d;
+    --text-link: #0067e0;
+    --channels-default: #6a7480;
+    --interactive-normal: #4f5660;
+    --interactive-hover: #2e3338;
+    --interactive-active: #060607;
+    --interactive-muted: #c7ccd1;
+    --background-primary: #fff;
+    --background-secondary: #f2f3f5;
+    --background-secondary-alt: #ebedef;
+    --background-tertiary: #e3e5e8;
+    --background-accent: #747f8d;
+    --background-floating: #fff;
+    --background-mobile-primary: #f8f9f9;
+    --background-mobile-secondary: #fff;
+    --background-modifier-hover: rgba(116,127,141,0.08);
+    --background-modifier-active: rgba(116,127,141,0.16);
+    --background-modifier-selected: rgba(116,127,141,0.24);
+    --background-modifier-accent: rgba(6,6,7,0.08);
+    --background-mentioned: rgba(250,166,26,0.1);
+    --background-mentioned-hover: rgba(250,166,26,0.2);
+    --background-message-hover: rgba(6,6,7,0.02);
+    --background-help-warning: rgba(250,166,26,0.1);
+    --background-help-info: rgba(0,103,224,0.1);
+    --scrollbar-thin-thumb: rgba(79,84,92,0.3);
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-thumb: #ccc;
+    --scrollbar-auto-track: #f2f2f2;
+    --scrollbar-auto-scrollbar-color-thumb: #e3e5e8;
+    --scrollbar-auto-scrollbar-color-track: #f2f3f5;
+    --elevation-stroke: 0 0 0 1px rgba(6,6,7,0.08);
+    --elevation-low: 0 1px 0 rgba(6,6,7,0.1),0 1.5px 0 rgba(6,6,7,0.025),0 2px 0 rgba(6,6,7,0.025);
+    --elevation-medium: 0 4px 4px rgba(0,0,0,0.08);
+    --elevation-high: 0 8px 16px rgba(0,0,0,0.16);
+    --logo-primary: #7289da;
+    --focus-primary: #00b0f4;
+    --guild-header-text-shadow: 0 1px 1px hsla(0,0%,100%,0.4);
+    --channeltextarea-background: #ebedef;
+    --activity-card-background: #fff;
+    --textbox-markdown-syntax: #6a7480;
+    --deprecated-card-bg: #f8f9f9;
+    --deprecated-card-editable-bg: rgba(246,246,247,0.6);
+    --deprecated-store-bg: #f8f9f9;
+    --deprecated-quickswitcher-input-background: #fff;
+    --deprecated-quickswitcher-input-placeholder: rgba(79,84,92,0.3);
+    --deprecated-text-input-bg: rgba(79,84,92,0.02);
+    --deprecated-text-input-border: rgba(79,84,92,0.3);
+    --rcdv-hover: #054d5e;
+    --rcdv-spoiler: hsla(0,0%,0%,.1);
+}
+
+.theme-dark {
+    --header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --text-normal: #dcddde;
+    --text-muted: #72767d;
+    --text-link: #479EAF;
+    --channels-default: #8e9297;
+    --interactive-normal: #b9bbbe;
+    --interactive-hover: #dcddde;
+    --interactive-active: #fff;
+    --interactive-muted: #4f545c;
+    --background-primary: #36393f;
+    --background-secondary: #2f3136;
+    --background-secondary-alt: #292b2f;
+    --background-tertiary: #202225;
+    --background-accent: #4f545c;
+    --background-floating: #18191c;
+    --background-mobile-primary: #36393f;
+    --background-mobile-secondary: #2f3136;
+    --background-modifier-hover: rgba(79,84,92,0.16);
+    --background-modifier-active: rgba(79,84,92,0.24);
+    --background-modifier-selected: rgba(79,84,92,0.32);
+    --background-modifier-accent: hsla(0,0%,100%,0.06);
+    --background-mentioned: rgba(250,166,26,0.05);
+    --background-mentioned-hover: rgba(250,166,26,0.08);
+    --background-message-hover: rgba(4,4,5,0.07);
+    --background-help-warning: rgba(250,166,26,0.1);
+    --background-help-info: rgba(0,176,244,0.1);
+    --scrollbar-thin-thumb: #202225;
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-thumb: #202225;
+    --scrollbar-auto-track: #2e3338;
+    --scrollbar-auto-scrollbar-color-thumb: #202225;
+    --scrollbar-auto-scrollbar-color-track: #2f3136;
+    --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+    --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+    --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+    --logo-primary: #fff;
+    --focus-primary: #00b0f4;
+    --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    --channeltextarea-background: #40444b;
+    --activity-card-background: #202225;
+    --textbox-markdown-syntax: #8e9297;
+    --deprecated-card-bg: rgba(32,34,37,0.6);
+    --deprecated-card-editable-bg: rgba(32,34,37,0.3);
+    --deprecated-store-bg: #36393f;
+    --deprecated-quickswitcher-input-background: #72767d;
+    --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+    --deprecated-text-input-bg: rgba(0,0,0,0.1);
+    --deprecated-text-input-border: rgba(0,0,0,0.3);
+    --deprecated-text-input-border-hover: #040405;
+    --deprecated-text-input-border-disabled: #202225;
+    --deprecated-text-input-prefix: #dcddde;
+    --rcdv-hover: #095d6a;
+    --rcdv-spoiler: hsla(0,0%,100%,.1);
+}
+
+
+body {
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-rendering: optimizelegibility;
+    margin: 0;
+    background: var(--background-primary);
+}
+
+#main {
+    display: none;
+    position: relative;
+}
+
+#top {
+    position: fixed;
+    top: 0; /* height: 49px; */
+    background: var(--background-secondary);
+    border-bottom: 1px solid var(--background-secondary-alt);
+    max-width: 1600px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 10000;
+    padding: 5px;
+    width: calc(100% - 20px);
+}
+#listname {
+    color: var(--header-primary);
+    font-size: 24px;
+    font-weight: 600;
+}
+#listname > .prefilter {
+    font-style: italic;
+    color: var(--header-secondary);
+}
+#requested {
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+#dostuff {
+    position: absolute;
+    top: 32px;
+    right: 4px;
+}
+#dostuff > a {
+    display: block;
+    cursor: pointer;
+    text-align: right;
+    float: right;
+    margin: 4px;
+}
+
+#filter {
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    width: 220px;
+}
+
+#filter.filtered {
+    background-color: #a0e0a0;
+}
+
+#filter.uncommitted, #filter.filtered.uncommitted {
+    background-color: #e0d090;
+}
+
+/* Votes */
+
+#vote {
+    background-color: #80c0f0;
+    margin-top: 16px;
+    padding: 6px;
+    font-size: 14pt;
+}
+
+#instructions > div {
+  margin: 4px 0;
+}
+
+#ballot {
+    display: none;
+}
+#ballot > .votes {
+    display: flex;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+    border-bottom: 1px dashed black;
+    padding: 3px 0;
+}
+#ballot > .votes > .vote {
+    margin: 2px;
+    padding: 3px 5px;
+    border: 2px solid #000060;
+    border-radius: 5px;
+    background-color: #3389e0;
+    line-height: 24.5px;
+}
+#ballot > .votes > .vote > a {
+    color: white;
+}
+
+#ballot > .ballotinstructions {
+    margin-bottom: 5px;
+}
+
+#ballot > .rest {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+#ballot > .rest .info {
+    border-radius: 0 10px 10px 0;
+    border: 1px solid gray;
+    color: gray;
+    border-left: 0;
+    padding: 2px 6px 2px 2px;
+}
+
+button.remove {
+    background-color: #e01000;
+    color: white;
+    border: 1px solid #400000;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 2px 5px;
+}
+button.remove:hover {
+    background-color: #e04030;
+}
+
+button.addvote, button.submit {
+    background-color: #408020;
+    color: white;
+    border: 2px solid #004000;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+button.addvote:hover, button.submit:hover {
+    background-color: #609030;
+}
+
+#voteerror {
+    display: none;
+    color: white;
+    background-color: maroon;
+    padding: 3px;
+    margin-top: 3px;
+}
+
+#votesuccess {
+    display: none;
+    background-color: #408020;
+    color: white;
+    padding: 3px;
+    margin-top: 3px;
+}
+
+/* Main contents */
+
+#contents {
+    position: relative;
+    top: var(--topoffset); bottom: 0;
+    color: var(--text-normal);
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+    --topoffset: 60px;
+}
+
+a {
+    color: var(--text-link);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+.fav {
+    padding-top: .125rem;
+    padding-bottom: .125rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    word-wrap: break-word;
+    user-select: text;
+    min-height: calc(282px + 2.7rem);
+    margin: 1rem;
+    background-color: var(--background-secondary);
+    border-radius: 1rem;
+    border: 0.2rem solid var(--background-accent);
+}
+.fav:hover {
+    border-color: var(--rcdv-hover);
+}
+
+.fav > .contents {
+    overflow: hidden;
+}
+
+.fav .plats {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    height: 1.6rem;
+}
+
+.fav .plats > div {
+    float: right;
+    background-color: var(--background-tertiary);
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.5rem;
+}
+
+.fav > .contents > .worldname {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    height: 1.4rem;
+    padding: 0.2rem;
+    text-overflow: ellipsis;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+.worldname > a {
+    display: block;
+    margin-right: 376px;
+}
+
+.fav > .contents > .imgwrap {
+    user-select: text;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    display: block;
+    background-color: var(--background-accent);
+}
+
+.fav .imgwrap > .placeholder {
+    color: rgba(200, 200, 200, 0.3);
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.fav .imgwrap > img {
+    position: absolute;
+}
+
+.fav .imgwrap > .frame {
+    border: 0.3rem solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.4rem;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+}
+
+.fav > .contents > .txt {
+    user-select: text;
+    display: block;
+    word-wrap: break-word;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    white-space: break-spaces;
+    overflow: hidden;
+    margin-bottom: 2.6rem;
+    margin-top: 0.3rem;
+    margin-right: 400px;
+}
+
+.fav .emoji {
+    position: relative;
+    width: 1.375em;
+    height: 1.375em;
+    min-height: 1.375em;
+}
+
+.fav .tags {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1rem;
+    height: 1.6rem;
+}
+
+.fav .tags > div {
+    float: left;
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    background-color: var(--background-tertiary);
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+const REST_URL = "/api";
+
+const WORLD_URL = "https://vrchat.com/home/world/";
+
+let maxVotes = 10;
+
+let dark = false;
+let sort = false;
+let imagecache = {};
+let dump = {};
+let body, currentfilter;
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    
+    let frm = document.getElementById("selector");
+    filter = document.getElementById("filter");
+    body = document.getElementsByTagName("body")[0];
+    
+    document.getElementById("rightmode").addEventListener("click", () => updateTheme(true));
+    document.getElementById("nightmode").addEventListener("click", () => updateTheme(false));
+    document.getElementById("namesort").addEventListener("click", () => { updateSort(true); listDump(filter.value, sort); });
+    document.getElementById("filesort").addEventListener("click", () => { updateSort(false); listDump(filter.value, sort); });
+    document.getElementById("loadpix").addEventListener("click", () => loadPix());
+    document.getElementById("ballot").querySelector("button.submit").addEventListener("click", () => submitVote());
+    
+    document.querySelectorAll(".info").forEach(infobutton => infobutton.addEventListener("click", () => { alert(infobutton.title); }));
+    
+    updateTheme(dark);
+    updateSort(sort);
+    
+    fetch(REST_URL + "/worlds")
+        .then((response) => {
+        
+            const responseType = String(response.status).substring(0, 1);
+        
+            if (responseType === "2") {
+                response.json()
+                    .then(json => {
+                        document.title = json.name;
+                        maxVotes = Math.max(1, json.maxVotes || maxVotes);
+                        loadDump(json);
+                        listDump(filter.value, sort);
+
+                        if (json.isClosed) {
+                            document.getElementById("instructions").textContent = "Voting is currently closed.";
+                        }
+
+                    })
+                    .catch(() => {
+                        document.getElementById("instructions").textContent = "Unable to load world list.";
+                    });
+            } else {
+                document.getElementById("instructions").textContent = "Unable to obtain world list.";
+            }
+
+        })
+        .catch(() => {
+            document.getElementById("instructions").textContent = "Please access over HTTP or HTTPS.";
+        });
+    
+    filter.value = '';
+    filter.addEventListener("change", (e) => {
+        e.target.classList.remove("uncommitted");
+        if (e.target.value) {
+            e.target.classList.add("filtered");
+        } else {
+            e.target.classList.remove("filtered");
+        }
+        listDump(e.target.value, sort);
+    });
+    filter.addEventListener("input", (e) => {
+        if (e.target.value != currentfilter) {
+            e.target.classList.add("uncommitted");
+        } else {
+            e.target.classList.remove("uncommitted");
+        }
+    });
+    
+});
+
+function escapeRegex(string) {
+    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
+function loadDump(json) {
+    
+    dump = json;
+    
+    if (!dump.favorites || !dump.name || !dump.requestStart || dump.favorites.length === undefined) {
+        return;
+    }
+
+    let i = 0;
+    for (let fav of dump.favorites) {
+        fav.wn = fav.wn || "(unnamed)";
+        fav.de = fav.de || "";
+        fav.tg = fav.tg || [];
+        fav.pl = fav.pl || [];
+        fav.si = fav.si || 0;
+        fav.sn = fav.sn || "";
+        fav.defSort = i;
+        i++;
+    }
+
+    document.getElementById("listname").innerHTML = dump.name + (dump.filter ? ` <span class="prefilter">${dump.filter}</span>` : "");
+}
+
+function listDump(filter, sort) {
+
+    currentfilter = filter;
+    
+    let main = document.getElementById("main");
+    let con = document.getElementById("contents");
+    
+    let favorites = dump.favorites;
+    if (filter) {
+        let fullcount = favorites.length;
+        let re = new RegExp(escapeRegex(filter).replace(/ /, ".*"), "i");
+        favorites = favorites.filter(fav => {
+            if (fav.wi.match(re) || fav.wn.match(re) || fav.de.match(re) || fav.si.match(re) || fav.sn.match(re)) {
+                return true;
+            }
+            if (fav.tg.find(tag => tag.match(re))) return true;
+            if (fav.pl.find(plat => plat.match(re))) return true;
+            return false;
+        });
+        document.getElementById("requested").innerText = /*"Generated " + new Date(dump.requestStart * 1000).toString() + " ; " +*/ "Showing " + favorites.length + " / " + fullcount + " entr" + (favorites.length != 1 ? "ies" : "y");
+    } else {
+        document.getElementById("requested").innerText = /*"Generated " + new Date(dump.requestStart * 1000).toString() + " ; " +*/ "Contains " + favorites.length + " entr" + (favorites.length != 1 ? "ies" : "y");
+    }
+
+    if (sort) {
+        favorites.sort((a, b) => a.wn.localeCompare(b.wn));
+    } else {
+        favorites.sort((a, b) => b.defSort - a.defSort);
+    }
+    
+    const ballot = document.getElementById("ballot");
+
+    con.innerHTML = "";
+    for (let fav of favorites) {
+        
+        //Description (process formatting)
+        let desc = fav.de;
+        desc = desc ? desc.replace(/˸/g, ":").replace(/⁄/g, "/")
+            .replace(/<?((https?|s?ftp)\:\/\/([^ >\n]+))>?/g, '<a target="_blank" href="$1">$1</a>')
+            : "";
+
+        let favdiv = document.createElement("div");
+        favdiv.id = "fav_" + fav.wi;
+        favdiv.dataset["world"] = fav.wi;
+        favdiv.className = "fav";
+
+        //Assemble main message elements in 'contents'
+        let contentsdiv = document.createElement("div");
+        contentsdiv.className = "contents";
+        
+        let platdiv = document.createElement("div");
+        platdiv.className = "plats";
+        for (let plat of fav.pl.reverse()) {
+            let oneplatdiv = document.createElement("div");
+            oneplatdiv.innerHTML = plat;
+            platdiv.append(oneplatdiv);
+        }
+
+        let namediv = document.createElement("div");
+        namediv.className = "worldname";
+        namediv.innerHTML = `<a href="${WORLD_URL}${fav.wi}" target="_blank">${fav.wn}</a>`;
+
+        let imgwrap = "", imageId;
+        if (fav.im) {
+            imageId = picToUUID(fav.im);
+            if (imagecache[imageId]) {
+                imgwrap = imagecache[imageId];
+            } else {
+                imgwrap = document.createElement("a");
+                imgwrap.innerHTML = `<div class="placeholder">Click Load images from VRChat</div>`;
+                imgwrap.className = "imgwrap";
+                let w = fav.iw;
+                let h = fav.ih;
+                if (w > 376) {
+                    h = h * 376 / w;
+                    w = 376;
+                }
+                if (h > 282) {
+                    w = w * 282 / h;
+                    h = 282;
+                }
+                imgwrap.target = "_blank";
+                let imgurl = picToThumbnail(fav.im);
+                if (imgurl) {
+                    imgwrap.href = imgurl;
+                }
+                imgwrap.style.width = w + "px";
+                imgwrap.style.height = h + "px";
+
+                imagecache[imageId] = imgwrap;
+            }
+        }
+
+        let votebutton = document.createElement("button");
+        votebutton.type = "button";
+        votebutton.className = "addvote";
+        votebutton.textContent = "ADD TO BALLOT";
+        votebutton.title = "Vote for this world when you submit your votes.";
+        
+        votebutton.addEventListener("click", () => { addWorldToVote(fav.wi); });
+        
+        if (ballot.querySelector(`[data-world="${fav.wi}"]`)) {
+            votebutton.style.display = "none";
+        }
+
+        let txtdiv = document.createElement("div");
+        txtdiv.className = "txt";
+        txtdiv.innerHTML = desc;
+
+        let tagsdiv = document.createElement("div");
+        tagsdiv.className = "tags";
+        for (let tag of fav.tg) {
+            if (tag == "-") continue;
+            let onetagdiv = document.createElement("div");
+            onetagdiv.innerText = tag;
+            tagsdiv.append(onetagdiv);
+        }
+
+        contentsdiv.append(platdiv);
+        contentsdiv.append(namediv);
+        contentsdiv.append(imgwrap);
+        if (!dump.isClosed) { contentsdiv.append(votebutton); }
+        contentsdiv.append(txtdiv);
+        contentsdiv.append(tagsdiv);
+        favdiv.append(contentsdiv);
+        
+        con.append(favdiv);
+    }
+    
+    if (favorites.length <= 50) {
+        loadPix();
+    } else {
+        document.getElementById("loadpix").style.display = "block";
+    }
+
+    main.style.display = "block";
+    
+    document.getElementById("contents").style.setProperty("--topoffset", document.getElementById("top").clientHeight + "px");
+}
+
+function updateTheme(newdark) {
+    dark = newdark;
+    if (dark) {
+        body.classList.remove("theme-light");
+        body.classList.add("theme-dark");
+        document.getElementById("rightmode").style.display = "none";
+        document.getElementById("nightmode").style.display = "block";
+    } else {
+        body.classList.remove("theme-dark");
+        body.classList.add("theme-light");
+        document.getElementById("nightmode").style.display = "none";
+        document.getElementById("rightmode").style.display = "block";
+    }
+}
+
+function updateSort(newsort) {
+    sort = newsort;
+    if (sort) {
+        document.getElementById("namesort").style.display = "none";
+        document.getElementById("filesort").style.display = "block";
+    } else {
+        document.getElementById("filesort").style.display = "none";
+        document.getElementById("namesort").style.display = "block";
+    }
+}
+
+function picToUUID(picUrl) {
+    let matchUrl = picUrl.match(/https\:\/\/api\.vrchat\.cloud\/api\/1\/file\/file_([0-9a-f-]+)\/[0-9]+\/file/);
+    if (matchUrl) {
+        return 'file_' + matchUrl[1];
+    }
+    return null;
+}
+function picToThumbnail(picUrl) {
+    let matchUrl = picUrl.match(/https\:\/\/api\.vrchat\.cloud\/api\/1\/file\/file_([0-9a-f-]+)\/([0-9]+)\/file/);
+    if (matchUrl) {
+        return `https://api.vrchat.cloud/api/1/image/file_${matchUrl[1]}/${matchUrl[2]}/1024`;
+    }
+    return null;
+}
+
+function loadPix() {
+
+    let favdivs = Array.from(document.getElementById("contents").getElementsByClassName("fav"));
+    let loader = setInterval(() => {
+        let favdiv = favdivs.shift();
+        if (!favdiv) {
+            clearInterval(loader);
+            return;
+        }
+
+        let txt = favdiv.getElementsByClassName("txt")[0];
+        
+        let imgwrap = favdiv.getElementsByClassName("imgwrap");
+        if (imgwrap.length) {
+            imgwrap = imgwrap[0];
+
+            imgwrap.innerHTML = "";
+
+            let img = document.createElement("img");
+            img.src = imgwrap.href;
+            img.style.width = imgwrap.style.width;
+            img.style.height = imgwrap.style.height;
+            imgwrap.append(img);
+
+            let imgframe = document.createElement("div");
+            imgframe.className = "frame";
+            imgwrap.append(imgframe);
+        }
+    }, 500);
+    document.getElementById("loadpix").style.display = "none";
+}
+
+function addWorldToVote(id) {
+
+    hideError();
+
+    const instructions = document.getElementById("instructions");
+    const ballot = document.getElementById("ballot");
+    const world = document.getElementById("fav_" + id);
+    
+    if (ballot.querySelector('[data-world="' + id + '"]')) {
+        //Already in ballot
+        alert("This world is already in the ballot!");
+        return;
+    }
+    
+    if (ballot.querySelector(".votes").children.length >= maxVotes) {
+        voteError("Your ballot is full. If you want to add another world, please remove an existing one first.");
+        return;
+    }
+    
+    world.querySelector(".addvote").style.display = "none";
+    
+    //Add element
+    
+    const inballot = document.createElement("div");
+    inballot.className = "vote";
+    inballot.dataset["world"] = id;
+    inballot.innerHTML = `
+        <a href="${WORLD_URL}${id}" target="_blank">${world.querySelector(".worldname > a").textContent}</a>
+        <button type="button" class="remove" title="Remove from ballot">X</button>
+    `;
+    
+    inballot.querySelector(".remove").addEventListener("click", () => { removeWorldFromVote(id); });
+    
+    ballot.querySelector(".votes").append(inballot);
+    
+    //Update vote section
+    
+    const votecount = ballot.querySelector(".votecount");
+    votecount.querySelector(".cur").textContent = ballot.querySelector(".votes").children.length;
+    votecount.querySelector(".max").textContent = maxVotes;
+    
+    ballot.style.display = "block";
+    instructions.style.display = "none";
+    
+    document.getElementById("contents").style.setProperty("--topoffset", document.getElementById("top").clientHeight + "px");
+}
+
+function removeWorldFromVote(id) {
+
+    hideError();
+
+    const ballot = document.getElementById("ballot");
+    const world = document.getElementById("fav_" + id);
+
+    const inballot = ballot.querySelector('[data-world="' + id + '"]');
+    if (!inballot) {
+        //Not yet in ballot
+        return;
+    }
+    
+    //Remove element
+    
+    inballot.remove();
+    
+    world.querySelector(".addvote").style.display = "inline-block";
+    
+    //Update vote section
+    
+    const votecount = ballot.querySelector(".votecount");
+    votecount.querySelector(".cur").textContent = ballot.querySelector(".votes").children.length;
+
+    if (!ballot.querySelector(".vote")) {
+        ballot.style.display = "none";
+        document.getElementById("instructions").style.display = "block";
+    }
+    
+    document.getElementById("contents").style.setProperty("--topoffset", document.getElementById("top").clientHeight + "px");
+}
+
+function submitVote() {
+
+    hideError();
+
+    const ballot = document.getElementById("ballot");
+    
+    const username = ballot.querySelector(".vrchat").value;
+    const discord = ballot.querySelector(".discord").value;
+    
+    if (!username) {
+        voteError("You must include your VRChat username.");
+        return;
+    }
+    
+    if (discord && (!discord.match(/^[a-z0-9._]{2,32}$/) || username.match(/\.\./))) {
+        voteError("Please use a valid discord username - this is not your display name, but your actual username.");
+        return;
+    }
+
+    const votes = [];
+    
+    for (const vote of ballot.querySelectorAll(".votes > .vote")) {
+        votes.push(vote.dataset.world);
+    }
+
+    const data = {
+        username: username,
+        discord: ballot.querySelector(".discord").value,
+        votes: votes
+    };
+
+    fetch(REST_URL + "/vote", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    }).then((response) => {
+    
+        const responseType = String(response.status).substring(0, 1);
+    
+        if (responseType === "2") {
+            voteSuccess();
+        } else {
+            response.text().then((msg) => {
+                if (responseType === "5") {
+                    alert("There was an error submitting your ballot: " + msg);
+                } else if (responseType === "4") {
+                    if (response.status === 409) {
+                        voteRepeated(msg);
+                    } else {
+                        voteError(msg);
+                    }
+                }
+            });
+        }
+    
+    });
+
+}
+
+function voteRepeated(msg) {
+
+    const ballot = document.getElementById("ballot");
+    ballot.style.display = "none";
+
+    document.querySelectorAll(".addvote").forEach(votebutton => {
+        votebutton.style.display = "none";
+    });
+
+    voteError(msg);
+
+}
+
+function voteError(msg) {
+
+    const error = document.getElementById("voteerror");
+    error.textContent = msg;
+    error.style.display = "block";
+
+    document.getElementById("contents").style.setProperty("--topoffset", document.getElementById("top").clientHeight + "px");
+
+}
+
+function hideError() {
+
+    const error = document.getElementById("voteerror");
+    error.style.display = "none";
+
+    document.getElementById("contents").style.setProperty("--topoffset", document.getElementById("top").clientHeight + "px");
+
+}
+
+function voteSuccess() {
+
+    const ballot = document.getElementById("ballot");
+    ballot.style.display = "none";
+
+    const error = document.getElementById("voteerror");
+    error.style.display = "none";
+
+    const success = document.getElementById("votesuccess");
+    success.style.display = "block";
+    
+    document.querySelectorAll(".addvote").forEach(votebutton => {
+        votebutton.style.display = "none";
+    });
+
+    document.getElementById("contents").style.setProperty("--topoffset", document.getElementById("top").clientHeight + "px");
+
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="main">
+    <div id="top">
+        <div id="listname"></div>
+        <div id="requested"></div>
+        <input type="text" id="filter">
+        <div id="dostuff">
+            <a id="rightmode" title="Switch to night mode">🌘 Night mode</a>
+            <a id="nightmode" title="Switch to right mode">💡 Right mode</a>
+            <a id="namesort" title="Sort by world name">🌍 Sort by name</a>
+            <a id="filesort" title="Sort by file order">🗃️ Sort by file</a>
+            <a id="loadpix" title="Images are loaded directly from the VRChat website and may no longer exist or may become unreachable.">🖼️ <b>Load images from VRChat</b></a>
+        </div>
+        <div id="vote">
+            <div id="instructions">
+                <div>Click the <b>ADD TO BALLOT</b> buttons to add worlds to your ballot.</div>
+            </div>
+            <div id="ballot">
+                <div class="votecount">Vote for worlds ( <span class="cur"></span> / <span class="max"></span> ):</div>
+                <div class="votes"></div>
+                <div class="ballotinstructions">Done? <b>Double-check</b> your choices, fill in your <b>username</b> and <b>SUBMIT</b>!</div>
+                <div class="rest">
+                    <div>VRChat Username (please be truthful): <input type="text" class="vrchat"><button type="button" class="info" title="Your full VRChat username with correct case, or your VRChat user ID. You must be a group member.">?</button></div>
+                    <div>Discord Username (optional): <input type="text" class="discord"><button type="button" class="info" title="Your discord username so we can contact you in case there are any issues with your vote. Optional.">?</button></div>
+                    <button type="button" class="submit" title="Send your votes to the server">SUBMIT VOTES</button>
+                </div>
+            </div>
+            <div id="voteerror"></div>
+            <div id="votesuccess">Thank you for voting!</div>
+        </div>
+    </div>
+    <div id="contents"></div>
+</div>
+
+</body>
+</html>

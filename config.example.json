@@ -1,0 +1,13 @@
+{
+    "name": "Vote for your favorite worlds!",
+    "maxVotes": 10,
+    "adminPassword": null,
+    "username": "VRChatUsername",
+    "password": "",
+    "imapUser": "IMAPUsername",
+    "imapPassword": "",
+    "localAddress": null,
+    "agentEmailAddress": "myaddress@example.com",
+    "group": "grp_...",
+    "closed": false
+}
